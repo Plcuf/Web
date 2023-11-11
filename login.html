@@ -11,26 +11,26 @@
     </head>
     <body>
         <h1> Donne infos </h1>  
-    <form>  
+    <form action="http://localhost:6969/user/redirection" method="post">  
         <div class="container">
             <fieldset>
                 <legend> Prénom </legend>   
-                <input type="text" placeholder="Inserez du texte" name="username" required>  
+                <input type="text" placeholder="Inserez du texte" name="prenom" required>  
             </fieldset>
             
             <fieldset>
                 <legend> Nom </legend>   
-                <input type="text" placeholder="Inserez du texte" name="password" required>
+                <input type="text" placeholder="Inserez du texte" name="nom" required>
             </fieldset>
             
             <fieldset>
                 <legend> Date d'anniversaire </legend>
-                <input type="date" value="2000-01-01" min="1945-01-01" max="2023-01-01" />
+                <input type="date" value="2000-01-01" min="1945-01-01" max="2023-01-01" name="date" />
             </fieldset>
             
             <fieldset>
                 <legend> Genre </legend>
-                <select>
+                <select name="genre">
                     <option value="Homme"> Homme </option>
                     <option value="Femme"> Femme </option>
                     <option value="Autre"> Autre </option>
@@ -41,8 +41,8 @@
                 </select>
             </fieldset>
         </div>   
-        <button type="submit">  Valider </button>   
-    </form> 
+        <button type="submit"> Valider </button>
+    </form>
     </body>
 </html>
 {{end}}

@@ -34,6 +34,13 @@ func main() {
 		Num int
 	}
 
+	type Form struct {
+		Name     string
+		Nickname string
+		Date     string
+		Genre    string
+	}
+
 	num := Number{0, 0}
 
 	EtudiantsPromo := []Etudiant{{"RODRIGUES", "Cyril", 22, "Homme"}, {"MEDERREG", "Kheir-eddine", 22, "Homme"}, {"PHILIPIERT", "Alan", 26, "Homme"}}
@@ -55,6 +62,20 @@ func main() {
 
 	http.HandleFunc("/user/init", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "login", 0)
+	})
+
+	http.HandleFunc("/user/redirection", func(w http.ResponseWriter, r *http.Request) {
+		temp.ExecuteTemplate(w, "redirection", 0)
+	})
+
+	http.HandleFunc("/form/post", func(rw http.ResponseWriter, r *http.Request) {
+		infos := Form{r.FormValue("prenom"), r.FormValue("nom"), r.FormValue("date"), r.FormValue("genre")}
+		temp.ExecuteTemplate(rw, "reponse", infos)
+	})
+
+	http.HandleFunc("/user/display", func(w http.ResponseWriter, r *http.Request) {
+		infos := r
+		temp.ExecuteTemplate(w, "display", infos)
 	})
 
 	fileserver := http.FileServer(http.Dir("./asset"))
