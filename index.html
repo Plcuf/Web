@@ -1,0 +1,36 @@
+{{define "promo"}}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset ="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <title> HangMan </title>
+    </head>
+    <body>
+        <h1 class="titres"> Informations sur la promotion </h1>
+            <h6> <strong> Nom : </strong> {{.NomPromotion}}</h6>
+            <h6> <strong> Filière : </strong> {{.FilierePromotion}}</h6>
+            <h6> <strong> Niveau : </strong> {{.NiveauPromotion}}</h6>
+            <h6> <strong> Nombre d'étudiants : </strong> {{.NombreEtudiants}}</h6>
+        <h1 class="titres"> Liste des étudiants </h1>
+        {{range .Etudiants}}
+        <div class="student">
+            <div class="studenttext">
+                <p> {{.Nom}}
+                {{.Prenom}} </p> <br>
+                <div class="row"> 
+                    <div> {{.Age}} </div>
+                    {{if eq .Genre "Homme"}}
+                    <img src="/static/guy.png" alt="a guy">
+                    {{else}}
+                    <img src="/static/girl.png" alt="a girl">
+                    {{end}}
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </body>
+</html>
+{{end}}

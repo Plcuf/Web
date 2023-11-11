@@ -1,0 +1,48 @@
+{{define "login"}}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/login.css">
+        <title> Log in </title>
+    </head>
+    <body>
+        <h1> Donne infos </h1>  
+    <form>  
+        <div class="container">
+            <fieldset>
+                <legend> Prénom </legend>   
+                <input type="text" placeholder="Inserez du texte" name="username" required>  
+            </fieldset>
+            
+            <fieldset>
+                <legend> Nom </legend>   
+                <input type="text" placeholder="Inserez du texte" name="password" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend> Date d'anniversaire </legend>
+                <input type="date" value="2000-01-01" min="1945-01-01" max="2023-01-01" />
+            </fieldset>
+            
+            <fieldset>
+                <legend> Genre </legend>
+                <select>
+                    <option value="Homme"> Homme </option>
+                    <option value="Femme"> Femme </option>
+                    <option value="Autre"> Autre </option>
+                    <option value="Animal"> Animal </option>
+                    <option value="Ordinateur"> Ordinateur </option>
+                    <option value="Helicoptere"> Helicoptère de combat </option>
+                    <option value="AlfaRomeo"> Alfa Romeo Giulietta SV Alleggerita </option>
+                </select>
+            </fieldset>
+        </div>   
+        <button type="submit">  Valider </button>   
+    </form> 
+    </body>
+</html>
+{{end}}
